@@ -1,18 +1,22 @@
 
 cmake_minimum_required(VERSION 3.20)
 
-project(TransformerCPP
-    VERSION 1.0
-    LANGUAGES CXX
-)
+project(TransformerCPP VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(transformer
+
     main.cpp
+
     src/core/matrix.cpp
+
+    src/operations/activations.cpp
+    src/operations/normalization.cpp
+
+    src/attention/scaled_dot_product.cpp
 )
 
 target_include_directories(transformer
